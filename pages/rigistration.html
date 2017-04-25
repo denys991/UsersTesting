@@ -1,0 +1,27 @@
+<section class="registr-section">
+    <div class="container">
+        <div class="registration">
+            <h2>Quick registration</h2>
+            <form name="newUser" class="registration-form">
+                <label>Enter your name:</label>
+                <input type="text" name="name" placeholder="Enter your name:" ng-model="user.name" required>
+                <span ng-show="newUser.name.$touched && newUser.name.$invalid ">User name is required</span>
+                <label>Enter your lastname:</label>
+                <input type="text" name="lastname" placeholder="Enter your lastname:" ng-model="user.lastname" required>
+                <span ng-show="newUser.lastname.$touched && newUser.lastname.$invalid">User lastname is required</span>
+                <label>Enter your email:</label>
+                <input type="email" name="email" placeholder="Enter your email:" ng-model="user.email" required>
+                <span ng-show="newUser.email.$dirty && newUser.email.$invalid">
+                    <span ng-show="newUser.email.$error.required">Email address is required</span>
+                    <span ng-show="newUser.email.$error.email">Invalid email address.</span>
+                </span>
+                <label>Enter your password:</label>
+                <input type="password" name="pass" placeholder="Enter your password:" ng-model="user.pass" required>
+                <span ng-show="newUser.pass.$touched && newUser.pass.$invalid"> Password is required</span>
+                <button ng-click="addUser()" ng-disabled="newUser.$invalid">Send</button>
+                <button type="reset">Reset</button>
+            </form>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beta Testing</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="app">
+    <div class="wrapper">
+        <div class="content">
+            <header class="main-header">
+                <div class="container">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="">
+                        <h1>beta testing</h1>
+                    </div>
+                    <nav>
+                        <ul class="main-nav">
+                            <li ng-class="{{ class }}"><a href="#!/">Home</a></li>
+                            <li><a href="#!/test">Tests</a></li>
+                            <li><a href="#!/registration">Registration</a></li>
+                            <li><a href="#!/contact">Contacts</a></li>
+                        </ul>
+                    </nav>
+                    <div class="enter-site">
+                        <span>Enter:</span>
+                        <img src="img/enter.png" alt="">
+                    </div>
+                </div>
+            </header>
+            <div ng-view>
+                <!-- Content will be here -->
+            </div >
+        </div>
+        <footer>
+            <span>© Test's system - Beta Testing 2016-2017 </span>
+        </footer>
+    </div>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-route/angular-route.min.js"></script>
+<script src="js/app.module.js"></script>
+<script src="js/controllers/homeCtrl.js"></script>
+<script src="js/controllers/testCtrl.js"></script>
+<script src="js/controllers/registrationCtrl.js"></script>
+<script src="js/controllers/contactCtrl.js"></script>
+<script src="js/directives/renderTest.js"></script>
+<script src="js/directives/renderTopic.js"></script>
+</body>
+</html>
