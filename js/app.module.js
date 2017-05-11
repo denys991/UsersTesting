@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'ui.sortable']);
 
 app.config(function ($routeProvider) {
     $routeProvider
@@ -16,7 +16,7 @@ app.config(function ($routeProvider) {
         })
         .when('/contact', {
             templateUrl: 'pages/contact.html',
-            controller: 'contact'
+            controller: 'contactCtrl'
         });
 });
 

@@ -172,7 +172,8 @@ body {
 /*******************************REGISTRATION****************************/
 /***********************************************************************/
 .registr-section,
-.test-section {
+.test-section,
+.contact-section {
     border-top: 1px solid #000;
     padding-bottom: 20px;
 }
@@ -313,8 +314,61 @@ render-test {
     text-align: left;
 }
 
+.question {
+    margin-top: 30px;
+}
 
 
+
+/*******************************************/
+.list {
+    list-style: none outside none;
+    margin: 10px 0 30px;
+}
+
+.item {
+    background: url("../img/arrow.png");
+    background-size: 30px 30px;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    width: 600px;
+    padding-left: 30px;
+    margin: 5px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.create-test > input[type='text'] {
+    padding: 5px 10px;
+    margin: 5px 0;
+    width: 600px;
+}
+
+.create-test > input[type='button'] {
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.item input[type='text'] {
+    padding: 5px 10px;
+    margin-right: 10px;
+    width: 90%;
+}
+
+.ui-sortable-helper {
+    cursor: move;
+}
+
+.create-test {
+    float: left;
+    text-align: left;
+    border: 1px solid #3c3c3c;
+    margin: 20px;
+    padding: 10px;
+    width: 93%;
+}
 
 
 

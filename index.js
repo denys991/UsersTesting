@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
-server.use(express.static('../'));
+server.use(express.static('./'));
 
 var users = [];
 var tests = [
@@ -67,45 +67,43 @@ var tests = [
         topic: 'Rock',
         question: 'What is ROCK?',
         answer: ['tree', 'apple', 'world', 'sky'],
-        rightAnswer: 1
+        rightAnswer: 'tree'
     },
     {
         topic: 'Rock',
         question: 'What is ROCK?',
         answer: ['tree', 'apple', 'world', 'sky'],
-        rightAnswer: 1
+        rightAnswer: 'apple'
     },
     {
         topic: 'Rock',
         question: 'What is ROCK?',
         answer: ['tree', 'apple', 'world', 'sky'],
-        rightAnswer: 1
+        rightAnswer: 'world'
     },
     {
         topic: 'Rock1',
         question: 'What is ROCK?',
         answer: ['tree', 'apple', 'world', 'sky'],
-        rightAnswer: 1
+        rightAnswer: 'world'
     },
     {
         topic: 'Sky',
         question: 'What is SKY?',
         answer: ['tree', 'apple', 'world', 'sky'],
-        rightAnswer: 1
+        rightAnswer: 'sky'
     }
 ];
 
-server.post('/getTests', function (req, res) {
-    var testList = [];
-    tests.forEach(function (elem, item) {
-        if (elem.topic == req.body.name) {
-            testList.push(elem);
-        }
+server.post('/tests', function (req, res) {
+    var testList = tests.filter(function (elem, item) {
+        return elem.topic == req.body.name
     });
+
     res.send(testList);
 });
 
-server.get('/getTopic', function (req, res) {
+server.get('/get-topic', function (req, res) {
     var topicList = [];
 
     function checkAvailability(arr, val) {
@@ -126,6 +124,12 @@ server.post('/addUser', function (req, res) {
     var user = req.body;
     users.push(user);
     res.send(users);
+});
+
+server.post('/save-test', function (req, res) {
+    var test = req.body;
+    tests.push(test);
+    res.send(tests);
 });
 
 server.listen(3000, function () {
