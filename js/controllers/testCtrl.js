@@ -16,8 +16,7 @@ app.controller('test', function ($scope, $http) {
     };
 
     $scope.getTopic();
-
-
+    
     $scope.setTopic = function (topic) {
         
         $scope.topicOption = {name: topic};
@@ -45,7 +44,7 @@ app.controller('test', function ($scope, $http) {
     };
     $scope.saveTest = function (test) {
         $scope.test.rightAnswer = $('input[type="radio"]:checked').prev('input').val();
-        console.log($scope.test.rightAnswer);
+        
         $http({
             method: 'POST',
             url: '/save-test',
@@ -55,7 +54,6 @@ app.controller('test', function ($scope, $http) {
         }, function error(response) {
             console.log(response.statusText);
         });
-        console.log(test);
     };
 
     $scope.$watch('topics', function (newVal, oldVal) {
@@ -63,9 +61,7 @@ app.controller('test', function ($scope, $http) {
     });
 
     $scope.checkTest = function () {
-
         $scope.checkedTests= $('input[type="radio"]:checked');
-
         $scope.chooseAnswer = [];
         $scope.checkedTests.each( function (index, elem) {
             $scope.chooseAnswer.push($(elem).val());
