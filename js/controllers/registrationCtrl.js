@@ -8,7 +8,7 @@ app.controller('registration', function ($scope, $http) {
         }).then(function success(response) {
             console.log(response.data);
             $scope.user = {};
-            window.alert('User successfuly add!');
+            alert('User successfuly add!');
         }, function error(response) {
                 throw new Error ('User is not add to database')
             }
